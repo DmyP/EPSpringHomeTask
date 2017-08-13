@@ -2,6 +2,7 @@ package com.ep.spring.hometask;
 
 import com.ep.spring.hometask.domain.Event;
 import com.ep.spring.hometask.domain.User;
+import com.ep.spring.hometask.service.AuditoriumService;
 import com.ep.spring.hometask.service.EventService;
 import com.ep.spring.hometask.service.UserService;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -15,6 +16,8 @@ public class SpringMain {
         ConfigurableApplicationContext appCtx = new ClassPathXmlApplicationContext("spring.xml");
         System.out.println("Bean definition names: " + Arrays.toString(appCtx.getBeanDefinitionNames()));
 
+        AuditoriumService auditoriumService= appCtx.getBean(AuditoriumService.class);
+        auditoriumService.getAll().forEach(System.out::println);
 
         UserService userService = appCtx.getBean(UserService.class);
         userService.getAll().forEach(System.out::println);

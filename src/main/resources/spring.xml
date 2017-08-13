@@ -9,7 +9,13 @@
         http://www.springframework.org/schema/util
         http://www.springframework.org/schema/util/spring-util-3.2.xsd">
 
+    <bean name="EventRepositoryMockImpl" class="com.ep.spring.hometask.repository.mock.EventRepositoryMockImpl"/>
     <bean name="UserRepositoryMockImpl" class="com.ep.spring.hometask.repository.mock.UserRepositoryMockImpl"/>
+
+
+    <bean name="EventServiceImpl" class="com.ep.spring.hometask.service.impl.EventServiceImpl">
+        <property name="repository" value="#{EventRepositoryMockImpl}"/>
+    </bean>
     <bean name="UserServiceImpl" class="com.ep.spring.hometask.service.impl.UserServiceImpl">
         <property name="repository" value="#{UserRepositoryMockImpl}"/>
     </bean>

@@ -1,6 +1,8 @@
 package com.ep.spring.hometask;
 
+import com.ep.spring.hometask.domain.Event;
 import com.ep.spring.hometask.domain.User;
+import com.ep.spring.hometask.service.EventService;
 import com.ep.spring.hometask.service.UserService;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -16,6 +18,9 @@ public class SpringMain {
 
         UserService userService = appCtx.getBean(UserService.class);
         userService.getAll().forEach(System.out::println);
+
+        EventService eventService = appCtx.getBean(EventService.class);
+        eventService.getAll().forEach(System.out::println);
 
         appCtx.close();
     }

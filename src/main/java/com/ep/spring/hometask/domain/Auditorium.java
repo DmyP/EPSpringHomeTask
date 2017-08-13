@@ -21,6 +21,11 @@ public class Auditorium {
     public Auditorium() {
     }
 
+    public Auditorium(String name, long numberOfSeats) {
+        this.name = name;
+        this.numberOfSeats = numberOfSeats;
+    }
+
     /**
      * Counts how many vip seats are there in supplied <code>seats</code>
      * 

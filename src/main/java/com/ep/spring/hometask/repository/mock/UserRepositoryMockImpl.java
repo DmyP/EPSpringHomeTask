@@ -21,6 +21,14 @@ public class UserRepositoryMockImpl implements UserRepository {
         MockDB.USER_LIST.forEach(user -> save(user));
     }
 
+    public Map<Long, User> getRepository() {
+        return repository;
+    }
+
+    public void setRepository(Map<Long, User> repository) {
+        this.repository = repository;
+    }
+
     @Nullable
     @Override
     public User getUserByEmail(@Nonnull String email) {

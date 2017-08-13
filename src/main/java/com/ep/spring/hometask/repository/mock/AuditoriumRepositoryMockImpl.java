@@ -7,17 +7,12 @@ import org.slf4j.LoggerFactory;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.stream.Collectors;
 
 public class AuditoriumRepositoryMockImpl implements AuditoriumRepository {
     private static final Logger log = LoggerFactory.getLogger(EventRepositoryMockImpl.class);
-
 
     private Map<Long, Auditorium> repository = new ConcurrentHashMap<>();
     private AtomicLong counter = new AtomicLong(0);
@@ -29,7 +24,7 @@ public class AuditoriumRepositoryMockImpl implements AuditoriumRepository {
     @Nullable
     @Override
     public Auditorium getByName(@Nonnull String name) {
-        log.info("getEventByEmail {}", name);
+        log.info("getEventByName {}", name);
         return repository.values().stream()
                 .filter(u -> name.equals(u.getName()))
                 .findFirst()

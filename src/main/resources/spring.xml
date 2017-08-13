@@ -11,6 +11,7 @@
 
     <bean name="AuditoriumRepositoryMockImpl" class="com.ep.spring.hometask.repository.mock.AuditoriumRepositoryMockImpl"/>
     <bean name="EventRepositoryMockImpl" class="com.ep.spring.hometask.repository.mock.EventRepositoryMockImpl"/>
+    <bean name="TicketRepositoryMockImpl" class="com.ep.spring.hometask.repository.mock.TicketRepositoryMockImpl"/>
     <bean name="UserRepositoryMockImpl" class="com.ep.spring.hometask.repository.mock.UserRepositoryMockImpl"/>
 
 
@@ -22,6 +23,9 @@
     </bean>
     <bean name="userServiceImpl" class="com.ep.spring.hometask.service.impl.UserServiceImpl">
         <property name="repository" value="#{UserRepositoryMockImpl}"/>
+    </bean>
+    <bean name="bookingService" class="com.ep.spring.hometask.service.impl.BookingServiceImpl">
+        <property name="repository" value="#{TicketRepositoryMockImpl}"/>
     </bean>
 
 </beans>

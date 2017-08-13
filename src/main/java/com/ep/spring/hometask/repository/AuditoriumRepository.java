@@ -13,7 +13,7 @@ public interface AuditoriumRepository{
      *
      * @return collection of Auditorium
      */
-    @Nullable public Set<Auditorium> getAll();
+    @Nullable Set<Auditorium> getAll();
 
     /**
      * Finding Auditorium by name in storage
